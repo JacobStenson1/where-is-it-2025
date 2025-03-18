@@ -1,35 +1,33 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+const getMenuItems = async () => {
+  const response = await fetch("/api/menu/item");
+  return await response.json();
+};
 
 export default function Menu() {
-  // @ts-ignore
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const data = new FormData(event.target);
-    const value = data.get("input");
+  const [menuItems, setMenuItems] = useState([]);
+  // Get menu items
+  useEffect(() => {
+    console.log("hi");
+    getMenuItems().then((items: { data: Object[] }) => {
+      console.log("items");
+      console.log(items);
 
-    const response = await fetch("/api/menu/item/save", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ value }),
+      setMenuItems(items.data);
     });
-
-    if (response.ok) {
-      console.log("Data saved successfully");
-    } else {
-      console.error("Error saving data");
-    }
-  };
+  }, []);
 
   return (
     <div>
       <form
-        onSubmit={handleSubmit}
+        // onSubmit={handleSubmit}
         style={{ display: "flex", alignItems: "center" }}
+        method="post"
+        action="/api/menu/item"
       >
-        <input type="text" name="input" placeholder="Enter text" />
+        <input type="text" name="name" placeholder="Enter text" />
         <button type="submit" style={{ marginLeft: "10px" }}>
           Save
         </button>
@@ -52,6 +50,10 @@ export default function Menu() {
       <br />
       /Garage
       <br />
+      {menuItems.map((item, i) => (
+        <div key={`${item.name} + ${i}`}>{item.name}</div>
+      ))}
+      {/*{JSON.stringify(menuItems)}*/}
     </div>
   );
 }
