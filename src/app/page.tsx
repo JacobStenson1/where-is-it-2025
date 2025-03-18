@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       <Menu />
-        <br/>
+      <br />
       <Items />
     </div>
   );
