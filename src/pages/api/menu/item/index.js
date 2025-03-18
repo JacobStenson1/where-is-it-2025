@@ -5,10 +5,7 @@ export default async function handler(req, res) {
   switch (req.method) {
     case "GET":
       const data = await MenuItemModel.find({});
-      console.log("data");
-      console.log(data);
       res.status(200).json({ data });
-
       break;
     case "POST":
       try {

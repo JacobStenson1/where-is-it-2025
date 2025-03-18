@@ -8,6 +8,7 @@ const getMenuItems = async () => {
 
 export default function Menu() {
   const [menuItems, setMenuItems] = useState([]);
+
   // Get menu items
   useEffect(() => {
     console.log("hi");
@@ -32,23 +33,8 @@ export default function Menu() {
           Save
         </button>
       </form>
-      /House <br />
+      FROM DB...
       <br />
-      // Loft <br />
-      /// Back Left
-      <br />
-      /// Back Right
-      <br />
-      <br />
-      // Under Stairs
-      <br />
-      <br />
-      // Study
-      <br />
-      /// Desk
-      <br />
-      <br />
-      /Garage
       <br />
       {menuItems.map((item, i) => (
         <div key={`${item.name} + ${i}`}>{item.name}</div>
