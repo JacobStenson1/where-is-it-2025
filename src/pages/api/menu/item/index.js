@@ -1,5 +1,5 @@
 import "@lib/mongodb";
-import MenuItemModel from '@models/menuItem';
+import MenuItemModel from "@models/menuItem";
 
 export default async function handler(req, res) {
   switch (req.method) {
