@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@components/*": [
+        "./src/app/components/*"
+      ],
+      "@lib/*": [
+        "./src/lib/*"
+      ],
+      "@constants/*": [
+        "./src/constants/*"
+      ],
+      "@providers/*": [
+        "./src/app/providers/*"
+      ],
+      "@context/*": [
+        "./src/app/context/*"
+      ],
+      "@models/*": [
+        "./src/models/*"
+      ]
+    }
+  }
+}

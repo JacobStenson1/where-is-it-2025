@@ -1,5 +1,5 @@
 import { Schema } from "mongoose";
-import { createIfNotExist } from "@/helpers/models";
+import {createIfNotExist} from '../helpers/models';
 
 const menuItemSchema = new Schema({
   name: String,

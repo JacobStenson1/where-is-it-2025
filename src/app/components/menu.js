@@ -11,7 +11,7 @@ export default function Menu() {
   // Get menu items
   useEffect(() => {
     console.log("hi");
-    getMenuItems().then((items: { data: Object[] }) => {
+    getMenuItems().then((items) => {
       console.log("items");
       console.log(items);
 

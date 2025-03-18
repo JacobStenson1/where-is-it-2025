@@ -1,9 +1,6 @@
 import "@lib/mongodb";
+import MenuItemModel from '@models/menuItem';
 
-// @ts-ignore
-import MenuItemModel from "@/models/menuItem";
-
-// @ts-ignore
 export default async function handler(req, res) {
   switch (req.method) {
     case "GET":
