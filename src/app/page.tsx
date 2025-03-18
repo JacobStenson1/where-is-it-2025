@@ -1,10 +1,12 @@
-import Image from "next/image";
+import Menu from "@components/menu";
+import Items from "@components/items";
 
 export default function Home() {
   return (
     <div>
-      side menu items
-      items in the middle
+      <Menu />
+        <br/>
+      <Items />
     </div>
   );
 }
