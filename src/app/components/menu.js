@@ -28,7 +28,7 @@ export default function Menu() {
         method="post"
         action="/api/menu/item"
       >
-        <input type="text" name="name" placeholder="Enter text" />
+        <input type="text" name="name" placeholder="Menu item name" />
         <button type="submit" style={{ marginLeft: "10px" }}>
           Save
         </button>
